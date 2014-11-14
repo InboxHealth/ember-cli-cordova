@@ -84,7 +84,7 @@ module.exports = {
   },
 
   config: function(env, baseConfig) {
-    if (env !== 'test' && baseConfig.locationType !== 'hash') {
+    if (env !== 'test' && env !== 'development' && baseConfig.locationType !== 'hash') {
       throw new Error('ember-cli-cordova: You must specify the locationType as \'hash\' in your environment.js');
     }
   }
