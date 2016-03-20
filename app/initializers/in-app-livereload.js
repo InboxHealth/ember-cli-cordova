@@ -5,7 +5,7 @@ import reloadInitializer from 'ember-cli-cordova/initializers/in-app-livereload'
 
 var inAppReload = reloadInitializer.initialize;
 
-export var initialize = function(application) {
+export var initialize = function(app) {
   if(typeof cordova === 'undefined' ||
       config.environment !== 'development' ||
       (config.cordova &&
@@ -13,7 +13,7 @@ export var initialize = function(application) {
     return;
   }
 
-  return inAppReload(application, config);
+  return inAppReload(app, config);
 };
 
 export default {
